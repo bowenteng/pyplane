@@ -55,4 +55,5 @@ if __name__ == '__main__':
         screen.blit(delta_737_image , (delta.x, delta.y))
         screen.blit(kill, (500, 600))
 #DO NOT DELETE
+
         pygame.display.update()
