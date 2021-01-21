@@ -1,4 +1,5 @@
 import pygame
+
 DARK_BLUE = (0, 0, 50)
 LIGHT_BLUE = (150, 188, 235)
 GREEN = (50, 255, 50)
@@ -10,7 +11,7 @@ if __name__ == '__main__':
     pygame.init()
     screen = pygame.display.set_mode((1024, 768))
     pygame.display.set_caption("plane")
-#blocks
+    # blocks
     delta_737_image = pygame.image.load(
         'b738_icon11.png'
     )
@@ -21,7 +22,7 @@ if __name__ == '__main__':
     game_icon = pygame.image.load('b738_icon11.png')
     pygame.display.set_icon(game_icon)
     BORDER = pygame.Rect(500, 0, 0, 600)
-#main:2
+    # main:2
     FPS = 40
     VEL = 2
     done = False
@@ -32,7 +33,7 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 done = True
-#Keys
+        # Keys
         Keys_pressed = pygame.key.get_pressed()
         if Keys_pressed[pygame.K_LEFT]:
             delta.x -= VEL
@@ -48,12 +49,12 @@ if __name__ == '__main__':
                 delta_737_image = pygame.transform.flip(delta_737_image, True, False)
         if Keys_pressed[pygame.K_DOWN]:
             delta.y += VEL
-        if (delta_737_image):
-#color
+        if delta_737_image:
+            # color
             screen.fill(DARK_BLUE)
         screen.fill(GREEN, (0, 600, 1024, 168))
-        screen.blit(delta_737_image , (delta.x, delta.y))
+        screen.blit(delta_737_image, (delta.x, delta.y))
         screen.blit(kill, (500, 600))
-#DO NOT DELETE
+        # DO NOT DELETE
 
         pygame.display.update()
